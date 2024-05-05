@@ -31,10 +31,29 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>R"] = { "ciw", desc = "Change word" },  -- change description but the same command
+    -- map shift + k to move line up
+    -- ["<C-k>"] = { "ddkP", desc = "Move line up" },  -- change description but the same command
+    -- ["<C-j>"] = { "ddp", desc = "Move line down" },  -- change description but the same command
+    
+    ["<C-k>"] = { ":m .+1<CR>==", desc = "Move line down" },  -- change description but the same commandp
+    ["<C-j>"] = { ":m .-2<CR>==", desc = "Move line up" },  -- change description but the ame command
+    ["<leader>x"] = { ":!chmod +x %", desc = "make the file eecutable" },  -- change description but the same command
+    ["<C-f>"] = { ":silent !tmux neww ~/tmx-sessionalize\n", desc = "make the file eecutable" },  -- change description but the same command
+    ["<leader><left>"] = { ":tabmove -", desc = "move tab to the left" },  -- change description but the same command
+    ["<leader><right>"] = { ":tabmove +", desc = "move tab to the right" },  -- change description but the same command
+    -- copy all text in the file
+    ["<leader>ca"] = { ":%y<CR>", desc = "Copy all text" },  -- change description but the same command
+  },
+  v = {
+    ["<C-j>"] = { ":m '>+1<CR>gv=gv", desc = "Move line down" },  -- change description but the same commandp
+    ["<C-k>"] = { ":m '<-2<CR>gv=gv", desc = "Move line up" },  -- change description but the same command
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+
 }
+

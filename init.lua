@@ -81,5 +81,6 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+     -- require('netcoredbg-macOS-arm64').setup(require('dap'))
   end,
 }
